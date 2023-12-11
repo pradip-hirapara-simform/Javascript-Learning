@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>coding-challenge-3</title>
+  </head>
+  <body>
+    coding-challenge-3
+    <script>
+      // 26. The switch Statement
+        const day = 'wednesday';
+        switch(day) {
+            case 'monday':  // day ==== 'monday'
+            console.log('plan course structure');
+            console.log('go to coding meetup');
+            break;
+            case 'tuesday':
+            console.log('prepare theory videos');
+            break;
+            case 'wednesday':
+            case 'thursday':
+            console.log('write code example');
+            break;
+            case 'friday': 
+            console.log('record videos');
+            break;
+            case 'satureday': 
+            case 'sunday': 
+            console.log('Enjoy the weekend :D');
+            break;
+            default:
+            console.log('not a valid days!');
+        }
+
+      //  27. Statements and Expressions
+          // Expression is what we can declare anywhere. and Statements are not declarable sentences. like below example
+          const newVar = 20;
+
+          // Statements
+          if (23 > 10) {
+            const Statements = '23 is bigger';
+          }
+
+
+    // 28. The Conditional (Ternary) Operator
+            // if else Statements in  one line
+              const age = 23;
+              age >= 18 ? console.log('I like to drink wine') : console.log('I like to drink water') 
+              // also we can use Ternary Operator in template
+              console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`);
+
+
+    // Exercise          
+
+    const bill = 275;
+    const tip = bill >= 50 && bill <= 300 ? bill/100*15 : bill/100*20;
+    const totalBill = bill + tip;
+    console.log(`the bill was ${bill}, the tip was ${tip}, and the total bill value ${totalBill}`);
+
+
+
+    let greeting = "say Hi"; 
+    if (true) { 
+      let greeting = "say Hello instead"; 
+      console.log('let', greeting); // "say Hello instead" 
+    } 
+    console.log('let', greeting); // "say Hi" 
+
+
+    let blockVar = "say Hi"; 
+    let times = 4; 
+    
+    if (times > 3) { 
+      var hello = "say Hello instead block"; 
+      console.log(hello);// "say Hello instead" 
+    } 
+    console.log(hello) // hello is not defined 
+
+
+    let greeter = "hey hi";  
+    
+    if (times > 3) { 
+       let greeter = "say Hello instead";  
+    }  
+    console.log(greeter) // "say Hello instead" 
+
+    const constVar = {
+        name: "John Doe",
+        times: 4
+    }
+    constVar.name = "Pradip";
+    console.log(constVar.name)
+
+    let [user, interface] = 'UI User';
+
+    console.log(user); // U
+
+    console.log(interface); // I
+
+    const allCollections = [1, 600, 40];
+
+    const maxNumber = Math.max(...allCollections);
+    console.log(maxNumber) //60
+    </script>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>coding-challenge-3</title>
+  </head>
+  <body>
+    coding-challenge-3
+    <script>
+      // 20. Type Conversion and Coercion
+        // Type Conversion
+
+        const inputYear = '1998';
+        console.log(inputYear + 20); // result : 199820
+        console.log(Number(inputYear)); // for convert string to number
+        console.log(Number(inputYear) + 20); // result : 2018
+
+        console.log(Number('jonas')); // result : NaN(not a number)
+        console.log(typeof NaN); // for check value type
+
+        console.log(String(12)); // for convert  number to string
+        console.log(typeof NaN); // for check value type
+
+        // Type Coercion
+
+        console.log("I'm " + 25 + 'years old'); // auto convert number to string
+        console.log("23" - "10" - 3); // auto convert string to number
+        console.log("2" * "2"); // auto convert string to number
+        console.log("6" / "2"); // auto convert string to number
+
+        let n  = '1' + 1; // result : 11
+        n = n - 1 // 11 - 1 =  10
+        console.log(n);
+        console.log('10' - '4' - '3' - 2 + '5');   // result : 15
+
+     // 21. Truthy and Falsy Values  
+        // 5 falsy values : 0, '', undefined, null , NaN, 
+        console.log(Boolean(0)); // result : false
+        console.log(Boolean(undefined)); // result : false
+        console.log(Boolean('jonas')); // result : true
+        console.log(Boolean('')); // result : false
+        console.log(Boolean({})); // result : true
+
+        let money = 0; // it's value is false
+        if(money){
+          console.log("don't spend it all")
+        } else {
+          console.log("you should get a job!")
+        }
+        let height; // it's value is false
+        // let height = 1; // it's value is true
+        if(height){
+          console.log("height is defined")
+        } else {
+          console.log("height is undefined")
+        } 
+        let newColorScheme = 'light'; 
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            newColorScheme = event.matches ? "dark" : "light";
+            console.log(newColorScheme);
+        });
+
+    // 22. Equality Operators: == vs. ===    
+
+    const age = 18;
+    const ageString = '18';
+    if (age === 18) console.log('triple equals with number - true'); else console.log('triple equals with number - false');  // result : true
+    if (ageString === 18) console.log('triple equals with string and number - true'); else console.log('triple equals with string and number - false'); // result : false
+    if (age === 19) console.log('triple equals not same value - true'); else console.log('triple equals not same value - false'); // result : false
+
+    
+    if (age == 18) console.log('double equals with number - true'); else console.log('double equals with number - false'); // result : true
+    if (ageString == 18) console.log('double equals with string and number - true'); else console.log('double equals with string and number - false'); // result : true
+    if (age == 19) console.log('double equals not same value - true'); else console.log('double equals not same value - false'); // result : false
+        
+    // const favourite = Number(prompt('what is your favourite number'));
+    // // console.log(favourite); //get value form prompt popup
+    // console.log(typeof favourite); //for check value type
+    // if (favourite === 23) {
+    //   console.log('Cool! 23 is an amzaing number!'); //get value form prompt popup    
+    // } else if (favourite === 9){
+    //   console.log(`9 is also a cool number`); //get value form prompt popup    
+    // } else if (favourite === 7){
+    //   console.log(`7 is also a cool number`); //get value form prompt popup    
+    // } else  {
+    //   console.log(`number is not 23, 9 and 7. it's get ${favourite}`); //get value form prompt popup    
+    // }
+
+    // if (favourite !== 23) console.log('why not 23')
+    // if (favourite != '24') console.log('why not 24'); else console.log('24');
+  
+  
+  // 23. Boolean Logic & 24. Logial operators
+      // basic boolean logic: The and, or & not operators
+    const valueTrueA = true // A
+    const valueFalseA = false // A
+    const valueTrueB = true // B 
+    const valueFalseB = false // B 
+    const valueTrueC = true // C 
+    const valueFalseC = false // C 
+    // and operators
+    console.log('and(&&) operators A:true and B:true', valueTrueA && valueTrueB); // result : true 
+    console.log('and(&&) operators A:false and B:false', valueFalseA && valueFalseB); // result : false 
+    console.log('and(&&) operators A:true and B:false', valueTrueA && valueFalseB); // result : false
+    console.log('and(&&) operators A:false and B:true', valueFalseA && valueTrueB); // result : false
+    console.log('and(&&) operators A:true and B:true and C:false', valueTrueA && valueTrueB && valueFalseC); // result : false
+    // or operators
+    console.log('or(||) operators A:true and B:true', valueTrueA || valueTrueB); // result : true
+    console.log('or(||) operators A:false and B:false', valueFalseA || valueFalseB); // result : false
+    console.log('or(||) operators A:false and B:true', valueFalseA || valueTrueB); // result : true
+    console.log('or(||) operators A:true and B:false', valueTrueA || valueFalseB); // result : true
+    console.log('or(||) operators A:true and B:False and C:false', valueTrueA || valueFalseB || valueFalseC); // result : true
+    // not operators
+    console.log('not(!) operators add true value to get false value', !valueTrueA); // result : false
+    //example 
+    const hasDrivingLicense = true
+    const hasGoodVision = true
+    const isTired = true
+      if (hasDrivingLicense && hasGoodVision && !isTired) {
+        console.log('sarah is able to drive!');
+      } else {
+        console.log('someone else should drive...');
+      }
+
+
+      // coding-challenge-3 Test 
+      const scoreDolphins = (96 + 108 + 89) / 3;
+      const scoreKoalas = (88 + 91 + 110) / 3;
+      console.log(scoreDolphins, scoreKoalas);
+
+      if (scoreDolphins > scoreKoalas) {
+        console.log('Dolphins win the trophy');
+      }  else if (scoreKoalas > scoreDolphins){
+        console.log('Koalas win the trophy');
+      } else if (scoreDolphins === scoreKoalas){
+        console.log('both team win the trophy');
+      }
+
+      const b1scoreDolphins = (97 + 112 + 81) / 3;
+      const b1scoreKoalas = (109 + 95 + 86) / 3;
+      console.log(b1scoreDolphins, b1scoreKoalas);
+
+      if (b1scoreDolphins > b1scoreKoalas && b1scoreDolphins >= 100) {
+        console.log('Dolphins win the trophy');
+      }  else if (b1scoreKoalas > b1scoreDolphins && b1scoreKoalas >= 100){
+        console.log('Koalas win the trophy');
+      } else if (b1scoreDolphins === b1scoreKoalas && b1scoreDolphins >= 100 && b1scoreKoalas >= 100){
+        console.log('both team win the trophy');
+      } else {
+        console.log('No one win the trophy')
+      }
+    </script>
+  </body>
+</html>
